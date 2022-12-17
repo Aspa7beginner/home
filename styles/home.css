@@ -27,18 +27,20 @@
         background-size: cover;
         min-height: 100vh;
         display: grid;
-        grid-template-areas: "nav" "heading"
+        grid-template-areas: "nav" "heading";
+        grid-template-rows: 2fr 3fr;
     }
 
     nav{
         grid-area: nav;
         color: white;
         background-color: black;
-        height: 4em;
+        height: 4.3em;
     }
     
     nav > ul {
         display: flex;
+        font-size: 1.1em;
     }
 
     .sub-nav-container {
@@ -64,7 +66,7 @@
         background-color: rgba(255, 255, 255, 0.133);
     }
 
-    /* for now I have removed it */
+    /* for now I have removed it  with display none*/
     .expand-down-arrow {
         display: inline-block;
         border-width: 0 3px 3px 0;
@@ -91,15 +93,18 @@
         row-gap: 0.8em;
         box-sizing: border-box;
         padding: 1em 4em 1em 1em;
-        background-color: rgba(0, 0, 0, 0.343);
+        background-color: rgba(0, 0, 0, 0.939);
         inline-size: max-content;
     }
 
-    h1 {
+    #header-container > p {
         grid-area:heading;
         text-align: center;
         color: white;
-        font-size: 4vw;
+        font-size: 1.4vw;
+        font-family: verdana, sans-serif;
+        word-spacing: 0.3vw;
+        letter-spacing: 0.05vw;
     }
 
     main {
@@ -115,27 +120,23 @@
         grid-area: side-right;
     }
 
-    main > section{
+    main > section {
         display: flex;
         justify-content: space-around;
-        gap: 2em;
-
+        gap: 3vw;
     }
 
     .app-category {
         flex: 1 1 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        column-gap: 2em;
         box-sizing: border-box;
-        max-width: 350px;
     }
 
     .app-category > a { 
-        flex: 1 1 0;
-        display: block; 
+        display: inline-block; 
+        width: 100%;
+        box-sizing: border-box;
         padding: 3em;
+        margin-bottom: 1em;
         border: 0.3em solid black;
         border-radius: 6px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 18px 0 rgba(0, 0, 0, 0.19); 
@@ -156,6 +157,7 @@
         height: 7em;
         font-size:1.2em;
     }
+
 
     .more-btn {
         border: none;
@@ -237,6 +239,24 @@
     }
 }
 
+@media (min-width: 1080px) and (max-width: 1870px) {
+    
+    .app-category > a {
+        height:20em;
+    }
+}
+
+@media (min-width: 3360px) {
+    main > section {
+        gap:4vw;
+    }
+}
+
+@media (min-width:1500px){
+    .app-category > p {
+        font-size: 1.2vw;
+    }
+}
 /*
 palette green
 CSS HEX 
