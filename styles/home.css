@@ -23,7 +23,7 @@
     }
 
     #header-container {
-        background: url("./images/header_bgd.webp"); /*img source: https://wallpapersafari.com/w/pNHxwB*/
+        background: url("../images/header_bgd.webp"); /*img source: https://wallpapersafari.com/w/pNHxwB*/
         background-size: cover;
         min-height: 100vh;
         display: grid;
@@ -194,7 +194,7 @@
         height: max(max-content, 30%);
         width:auto;
         font-size: 1.1em;
-        background-color:black;     /* img-source: https://jooinn.com/img/get */
+        background-color:black;
         color: white;
     }
 
