@@ -202,9 +202,9 @@
         margin-top: 1em;
     }
 
-    main > section > a img {
+    main > section > a svg {
         height: 7em;
-        font-size:1.2em;
+        font-size: 1.3em;
     }
 
     .more-btn {
@@ -293,7 +293,7 @@
         justify-content: flex-end;
     }
 
-    .icon-container {
+    footer svg {
         width: 2.5em;
         height: 2.5em;
         margin-left:1em;
@@ -317,33 +317,43 @@
     }
 }
 
-@media (min-width: 3000px) {
-    main > section {
-        column-gap:4vw;
-    }
-}
-
 @media (min-width:2500px){
     * {
         font-size: 1vw;
     }
 
-    section .app-category-description, .more-btn {
-        font-size: 1vw;
+    main section > a {
+        height:15rem;
+
     }
+
+    main section > a > h3 {
+        font-size: 1.5rem;
+    }
+    main section > a > svg {
+        height: 5.3rem;
+    }
+
+    section .app-category-description, .more-btn {
+        font-size: 1.1vw;
+    }
+
 }
 
 @media (min-width: 2000px) and (max-width: 2499px) {
     section .more-btn, .app-category-description {
         font-size: 1.6rem;
     }
-    
-    p {
-        font-size: 1.5rem;
-    }
 
     nav li *{
         font-size: 1.5rem;
+    }
+}
+
+
+@media (min-width: 3000px) {
+    main > section {
+        column-gap:4vw;
     }
 }
 /*
