@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
     --dark-blue: rgba(6, 14, 25);
@@ -6,7 +5,7 @@
     --bg-gray: lightgray;
 }
 /*remember to remove the ../ from the path of all resorce files*/
-@media (min-width: 1080px) {
+@media (min-width: 1400px) {
 
     body {
         display: grid;
@@ -15,6 +14,7 @@
             "side-left main side-right"
             "footer footer footer" ;
         grid-template-columns: 1fr 8fr 1fr;
+        background-color: rgb(245, 245, 245);
     }
 
     header{
@@ -24,22 +24,24 @@
     }
 
     #header-container {
-        background: url("./images/header_bgd.webp"); /*img source: https://wallpapersafari.com/w/pNHxwB*/
+        background: url("../images/header_bgd.webp"); /*img source: https://wallpapersafari.com/w/pNHxwB*/
         background-size: cover;
         min-height: 100vh;
         display: grid;
-        grid-template-areas: "nav" "heading"
+        grid-template-areas: "nav" "heading";
+        grid-template-rows: 2fr 3fr;
     }
 
     nav{
         grid-area: nav;
         color: white;
         background-color: black;
-        height: 4em;
+        height: 4.3em;
     }
     
     nav > ul {
         display: flex;
+        font-size: 1.1em;
     }
 
     .sub-nav-container {
@@ -65,7 +67,7 @@
         background-color: rgba(255, 255, 255, 0.133);
     }
 
-    /* for now I have removed it */
+    /* for now I have removed it  with display none*/
     .expand-down-arrow {
         display: inline-block;
         border-width: 0 3px 3px 0;
@@ -92,18 +94,22 @@
         row-gap: 0.8em;
         box-sizing: border-box;
         padding: 1em 4em 1em 1em;
-        background-color: rgba(0, 0, 0, 0.343);
+        background-color: rgba(0, 0, 0, 0.939);
         inline-size: max-content;
     }
 
-    h1 {
+    #header-container > p {
         grid-area:heading;
         text-align: center;
-        font-family: 'Open Sans', sans-serif;
         color: white;
-        font-size: 4vw;
+        font-size: 1.4vw;
+        font-family: verdana, sans-serif;
+        word-spacing: 0.3vw;
+        letter-spacing: 0.05vw;
     }
 
+
+    /* ############################################*/
     main {
         grid-area: main;
         width: 100%;
@@ -117,62 +123,83 @@
         grid-area: side-right;
     }
 
-    main > section{
+    main > section {
         display: flex;
         justify-content: space-around;
-        gap: 2em;
-
+        gap: 3vw;
+        max-height: 70%;
     }
 
-    .app-category {
+    .app-category-container {
         flex: 1 1 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        column-gap: 2em;
         box-sizing: border-box;
-        max-width: 350px;
+        min-height: 0;
+        overflow-y: hidden;
     }
 
-    .app-category > a { 
-        flex: 1 1 0;
-        display: block; 
+    .app-category-container > a { 
+        display: inline-block; 
+        width: 100%;
+        box-sizing: border-box;
         padding: 3em;
+        margin-bottom: 6%;
         border: 0.3em solid black;
         border-radius: 6px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 18px 0 rgba(0, 0, 0, 0.19); 
         text-align: center;   
     }
 
-    .app-category > a:hover {
+    .app-category-container > a:hover {
         box-shadow: 0 2px 4px 0 rgba(132, 220, 198, 0.75), 0 2px 18px 0 rgba(132, 220, 198, 0.75); 
     }
 
-    .app-category > a h3 {
+    .app-category-container > a h3 {
         font-size: 1.8em;
         font-weight: bolder;
         margin-top: 1em;
     }
 
-    .app-category > a img {
+    .app-category-container > a img {
         height: 7em;
         font-size:1.2em;
     }
 
     .more-btn {
         border: none;
-        max-width: max-content;
+        width: 100%;
+        margin-bottom: 5%;
         align-self: center;
         background-color: none;
         color:black;
-        font-size: 1.3em;
+        font-size: 1.2em;
         cursor: pointer;
+        text-align: end;
     }
 
     .more-btn:hover {
         font-weight: bold;
     }
 
+    .app-category-description {
+        min-height: 0;
+        overflow-y: hidden;
+        font-size: 1.2em;
+        position: relative;
+    }
+
+    .app-category-description::after {
+        content: "";
+        display: inline-block;
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        z-index:1;
+        box-sizing: border-box;
+        background: rgb(245,245,245);
+        background: linear-gradient(180deg, rgba(245,245,245,0.5158438375350141) 0%, rgba(245,245,245,1) 25%);
+    }
     /* for icon  instead of text in expanded text element
     img[alt^="more info"] {
         height: 2em;
@@ -196,7 +223,7 @@
         height: max(max-content, 30%);
         width:auto;
         font-size: 1.1em;
-        background-color:black;     /* img-source: https://jooinn.com/img/get */
+        background-color:black;
         color: white;
     }
 
@@ -239,6 +266,24 @@
     }
 }
 
+@media (min-width: 1400px) and (max-width: 2000px) {
+    
+    .app-category-container > a {
+        height:20em;
+    }
+}
+
+@media (min-width: 3360px) {
+    main > section {
+        gap:4vw;
+    }
+}
+
+@media (min-width:1500px){
+    .app-category-container > p, .more-btn {
+        font-size: 1.2vw;
+    }
+}
 /*
 palette green
 CSS HEX 

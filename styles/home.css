@@ -5,7 +5,7 @@
     --bg-gray: lightgray;
 }
 /*remember to remove the ../ from the path of all resorce files*/
-@media (min-width: 1080px) {
+@media (min-width: 1400px) {
 
     body {
         display: grid;
@@ -14,6 +14,7 @@
             "side-left main side-right"
             "footer footer footer" ;
         grid-template-columns: 1fr 8fr 1fr;
+        background-color: rgb(245, 245, 245);
     }
 
     header{
@@ -35,26 +36,26 @@
         grid-area: nav;
         color: white;
         background-color: black;
-        height: 4.3em;
+        height: 4.3rem;
     }
     
     nav > ul {
         display: flex;
-        font-size: 1.1em;
+        font-size: 1.2rem;
     }
 
     .sub-nav-container {
         display: inline-block;
         box-sizing: border-box;
         position: relative;
-        min-width: 8em;
+        min-width: 8rem;
     }
 
     .sub-nav-container > button {
         display: inline-block;
         box-sizing: border-box;
         width: 100%;
-        line-height: 4em; /* to vertically align text to the middle */
+        line-height: 4rem; /* to vertically align text to the middle */
         vertical-align: middle;
         border-right: 1px solid rgba(255, 255, 255, 0.221);
         text-align: center;
@@ -107,6 +108,8 @@
         letter-spacing: 0.05vw;
     }
 
+
+    /* ############################################*/
     main {
         grid-area: main;
         width: 100%;
@@ -121,58 +124,126 @@
     }
 
     main > section {
-        display: flex;
-        justify-content: space-around;
-        gap: 3vw;
+        display: grid;
+        grid-template-areas: 
+            "cat1 cat2 cat3 cat4" 
+            "more1 more2 more3 more4" 
+            "cont1 cont2 cont3 cont4";
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2em;
+        max-height: 70%;
     }
 
-    .app-category {
+    main > section a:first-of-type {
+        grid-area:cat1;
+    }
+    main > section a:nth-of-type(2) {
+        grid-area: cat2;
+    }
+    main > section a:nth-of-type(3) {
+        grid-area:cat3;
+    }
+    main > section a:last-of-type {
+        grid-area: cat4;
+    }
+
+    main > section button:first-of-type {
+        grid-area:more1;
+    }
+    main > section button:nth-of-type(2) {
+        grid-area: more2;
+    }
+    main > section button:nth-of-type(3) {
+        grid-area:more3;
+    }
+    main > section button:last-of-type {
+        grid-area: more4;
+    }
+
+    main > section p:first-of-type {
+        grid-area:cont1;
+    }
+    main > section p:nth-of-type(2) {
+        grid-area: cont2;
+    }
+    main > section p:nth-of-type(3) {
+        grid-area:cont3;
+    }
+    main > section p:last-of-type {
+        grid-area: cont4;
+    }
+/*
+    .app-category-container {
         flex: 1 1 0;
         box-sizing: border-box;
+        min-height: 0;
+        overflow-y: hidden;
     }
-
-    .app-category > a { 
+*/
+    main > section > a { 
         display: inline-block; 
         width: 100%;
         box-sizing: border-box;
         padding: 3em;
-        margin-bottom: 1em;
+        margin-bottom: 6%;
         border: 0.3em solid black;
         border-radius: 6px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 18px 0 rgba(0, 0, 0, 0.19); 
         text-align: center;   
     }
 
-    .app-category > a:hover {
+    main > section > a:hover {
         box-shadow: 0 2px 4px 0 rgba(132, 220, 198, 0.75), 0 2px 18px 0 rgba(132, 220, 198, 0.75); 
     }
 
-    .app-category > a h3 {
+    main > section > a h3 {
         font-size: 1.8em;
         font-weight: bolder;
         margin-top: 1em;
     }
 
-    .app-category > a img {
+    main > section > a img {
         height: 7em;
         font-size:1.2em;
     }
 
-
     .more-btn {
         border: none;
-        max-width: max-content;
+        width: 100%;
+        margin-bottom: 5%;
         align-self: center;
         background-color: none;
         color:black;
-        font-size: 1.3em;
+        font-size: 1.2em;
         cursor: pointer;
+        text-align: end;
     }
 
     .more-btn:hover {
         font-weight: bold;
     }
 
+    .app-category-description {
+        min-height: 0;
+        overflow-y: hidden;
+        font-size: 1.3rem;
+        position: relative;
+    }
+
+    .app-category-description::after {
+        content: "";
+        display: inline-block;
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        z-index:1;
+        box-sizing: border-box;
+        background: rgb(245,245,245);
+        background: linear-gradient(180deg, rgba(245,245,245,0.5158438375350141) 0%, rgba(245,245,245,1) 25%);
+        
+    }
     /* for icon  instead of text in expanded text element
     img[alt^="more info"] {
         height: 2em;
@@ -193,9 +264,8 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: end;
         padding:2.5em 2em 1em 2em;
-        height: max(max-content, 30%);
         width:auto;
-        font-size: 1.1em;
+        font-size: 1.3rem;
         background-color:black;
         color: white;
     }
@@ -234,27 +304,46 @@
 
     .copyright {
         grid-area: copyright;
-        font-size: 0.9em;
+        font-size: 0.9rem;
         text-align:center;
     }
 }
 
-@media (min-width: 1080px) and (max-width: 1870px) {
+
+@media (min-width: 1400px) and (max-width: 2000px) {
     
-    .app-category > a {
+    main section > a {
         height:20em;
     }
 }
 
-@media (min-width: 3360px) {
+@media (min-width: 3000px) {
     main > section {
-        gap:4vw;
+        column-gap:4vw;
     }
 }
 
-@media (min-width:1500px){
-    .app-category > p {
-        font-size: 1.2vw;
+@media (min-width:2500px){
+    * {
+        font-size: 1vw;
+    }
+
+    section .app-category-description, .more-btn {
+        font-size: 1vw;
+    }
+}
+
+@media (min-width: 2000px) and (max-width: 2499px) {
+    section .more-btn, .app-category-description {
+        font-size: 1.6rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    nav li *{
+        font-size: 1.5rem;
     }
 }
 /*

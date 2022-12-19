@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
     <title>Home</title>
     <link href="styles/all.css" rel="stylesheet">
-    <link href="styles/home.css" rel="stylesheet">
+    <link href="styles/home - Copy.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -55,6 +55,7 @@
                         <button>IoT</button>
                         <ul class="sub-nav">
                             <li><a href="#">Project 1</a></li>
+                            <li><a href="#">Project 1</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -66,70 +67,72 @@
     <main>
         <section><!--style with flexbox-->
             <!-- may change the oreder of a and div elements-->
-            <div  class="app-category">
-            <a href="#">
-                <img src="icons/ml.svg" alt="machine learning apps">
-                <h3>Machine Learning</h3>
-            </a>
-            <p>
-                Projects mainly developed on my free time. There are 
-                two projects in total for now. One is a tomato disease 
-                classifier, a deep learning project using CNNs. The other
-                one is a project analysing crossectional meteorological 
-                data for countries around the world along the past 40
-                or for some, the past 20 years. There is a third project,
-                based on neural style transfer, mainly developed as a hobby.
-                Some of the results produced by the previously mentioned
-                project can be found on my instagram (link in footer).
-            </p>
-            <button class="more-btn">more...</button>
-            </div>
 
-            <div class="app-category">
+                <a href="#">
+                    <img src="icons/ml.svg" alt="machine learning apps">
+                    <h3>Machine Learning</h3>
+                </a>
+                <button class="more-btn">more...</button>
+                <p class="app-category-description">
+                    Projects mainly developed on my free time. There are 
+                    two projects in total for now. One is a tomato disease 
+                    classifier, a deep learning project using CNNs. The other
+                    one is a project analyzing cross sectional meteorological 
+                    data for countries around the world along the past 40
+                    or for some, the past 20 years. There is a third project,
+                    based on neural style transfer, mainly developed as a hobby.
+                    Some of the results produced by the previously mentioned
+                    project can be found on my Instagram (link in footer).
+                </p>
+  
+
                 <a href="#">
                     <img src="icons/android.svg" alt="android apps">
                     <h3>Android</h3>
                 </a>
-                <p>
-                  Various small projects of native android applications, 
-                  developed during my studies. The features cover from 
-                  layouts, activities, forms to content providers, photo galleries
-                  and interacting with the google maps api.  
-                </p>
                 <button class="more-btn">more...</button>
-            </div>
+                <p class="app-category-description">
+                    Various small projects of native android applications, 
+                    developed during my studies. The features cover from 
+                    layouts, activities, forms to content providers, photo galleries
+                    and interacting with the google maps API.  
+                </p>
 
-            <div class="app-category">
+
+
                 <a href="#">
                     <img src="icons/web.svg" alt="web apps">
                     <h3>Web</h3>
                 </a>
-                <p>
-                    Small scale projects mainly comprised of form based applications. 
+                <button class="more-btn">more...</button>
+                <p class="app-category-description">
+                    Small scale projects mainly comprised of form-based applications. 
                     I only develop the front end of these simple applications, 
-                    with javascript interacting with the local storage of the browser
+                    with JavaScript interacting with the local storage of the browser
                     to store information added by the user. One of them is 
-                    somewhat more complex, as it simulates a small scale e-shop. 
+                    somewhat more complex, as it simulates a small-scale e-shop. 
                     It is the only application that involves back-end development.
                 </p>
-                <button class="more-btn">more...</button>
-            </div>
 
-            <div class="app-category">
+            <!-- maybe replace it with more category-->
+
                 <a href="#">
                     <img src="icons/iot.svg" alt="iot">
                     <h3 class="app-title">IoT</h3>
                 </a>
-                <p>
+                <button class="more-btn">more...</button>
+                <p class="app-category-description">
                     This is an IoT end-to-end system, developed for 
                     understanding web-based technologies on IoT Systems.
                     The system contains both hardware and software
                     components. It is a smart switch which can be 
-                    switched on or off both automatically and over wifi(from 
+                    switched on or off both automatically and over Wi-Fi(from 
                     the user's phone).
+                    There is also a standalone application, developed in python for the needs
+                    of my freelance job as a mixture classifier and msds author. The 
+                    application interacts with a database that contains the products 
+                    and contains logic for classifying them.
                 </p>
-                <button class="more-btn">more...</button>
-            </div>
         </section>
     </main>
 
@@ -139,12 +142,13 @@
             <p>
                 This page is a portfolio for some projects I have
                 developed during my free time and while studying for my masters in  
-                <a href="https://www.e-ce.uth.gr/studies/postgraduate/applied-informatics/?lang=en">Applied Informatics</a>
-                offerend by <a href="https://www.e-ce.uth.gr/?lang=en">
+                <a href="https://www.e-ce.uth.gr/studies/postgraduate/applied-informatics/?lang=en">Applied Informatics</a>,
+                offered by the <a href="https://www.e-ce.uth.gr/?lang=en">
                 Department of Electrical and Computer Engineering</a> (University of Thessaly). 
-                Upon comming across this website, I hope future recruters 
+                Upon coming across this website, I hope future recruiters 
                 will get to know more about me and my work. If possible, 
                 I would like to request some feedback on how to improve my work.
+   
             </p>
         </div>
         
@@ -187,16 +191,6 @@
                 </div>
             </a>
         </section>
-
-        <!-- put conditional in js for when the link to the icon is active
-             in the html code from icon 8 and only then activate the code otherwise add  the png icon
-            html for all icons:
-                // instagram
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="50" height="50"
-                viewBox="0 0 50 50">
-                <path d="M 16 3 C 8.8324839 3 3 8.8324839 3 16 L 3 34 C 3 41.167516 8.8324839 47 16 47 L 34 47 C 41.167516 47 47 41.167516 47 34 L 47 16 C 47 8.8324839 41.167516 3 34 3 L 16 3 z M 16 5 L 34 5 C 40.086484 5 45 9.9135161 45 16 L 45 34 C 45 40.086484 40.086484 45 34 45 L 16 45 C 9.9135161 45 5 40.086484 5 34 L 5 16 C 5 9.9135161 9.9135161 5 16 5 z M 37 11 A 2 2 0 0 0 35 13 A 2 2 0 0 0 37 15 A 2 2 0 0 0 39 13 A 2 2 0 0 0 37 11 z M 25 14 C 18.936712 14 14 18.936712 14 25 C 14 31.063288 18.936712 36 25 36 C 31.063288 36 36 31.063288 36 25 C 36 18.936712 31.063288 14 25 14 z M 25 16 C 29.982407 16 34 20.017593 34 25 C 34 29.982407 29.982407 34 25 34 C 20.017593 34 16 29.982407 16 25 C 16 20.017593 20.017593 16 25 16 z"></path>
-                </svg>-->
         <p class="copyright"> Copyright 2022</p>
     </footer>
 </body>
