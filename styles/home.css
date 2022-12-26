@@ -30,17 +30,16 @@
         display: grid;
         grid-template-areas: "nav" "heading";
         grid-template-rows: 2fr 3fr;
-    }
-
-    nav{
-        grid-area: nav;
-        color: white;
-        background-color: black;
-        height: 4.3rem;
+        background-repeat: no-repeat;
     }
     
     nav > ul {
         display: flex;
+        grid-area: nav;
+        align-items: baseline;
+        color: white;
+        background-color: black;
+        height: 4.3rem;
         font-size: 1.2rem;
     }
 
@@ -55,9 +54,8 @@
         display: inline-block;
         box-sizing: border-box;
         width: 100%;
-        line-height: 4rem; /* to vertically align text to the middle */
+        line-height: 4.3rem; /* to vertically align text to the middle */
         vertical-align: middle;
-        border-right: 1px solid rgba(255, 255, 255, 0.221);
         text-align: center;
         padding: 0em 1em;
     }
@@ -67,18 +65,6 @@
         background-color: rgba(255, 255, 255, 0.133);
     }
 
-    /* for now I have removed it  with display none*/
-    .expand-down-arrow {
-        display: inline-block;
-        border-width: 0 3px 3px 0;
-        padding: 3px;
-        margin: 0 0 0.2em 0.6em;
-        box-sizing: border-box;
-        border: solid white;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        display: none;
-    }
 
     /* this is going to be initially hidden
         once the button on the menu category is hovered its display is
@@ -94,9 +80,18 @@
         row-gap: 0.8em;
         box-sizing: border-box;
         padding: 1em 4em 1em 1em;
-        background-color: rgba(0, 0, 0, 0.939);
+        background-color: rgba(0, 0, 0, 0.716);
         inline-size: max-content;
+        pointer-events: none; /*not be clickable when not visible*/
+        opacity: 0;
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
     }
+    
+    .sub-nav-container.active > button + .sub-nav {
+        opacity:1;
+        pointer-events:auto; /*be clickable when visible*/
+    }
+
 
     #header-container > p {
         grid-area:heading;

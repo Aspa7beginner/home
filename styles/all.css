@@ -6,8 +6,6 @@
 
 /* some general settings */
 html, body {
-    margin:0;
-    padding:0;
     height:100%;
     background-color: rgba(245, 245, 245);
     font-family: 'Open Sans', 'Lato', 'Roboto', 'PT Sans', 'Cambria', 'Sans Serif';
@@ -23,11 +21,6 @@ header, footer {
     font-family: "Verdana", "Helverica", "Glober", "Cambria";
 }
 
-p, h1, h2, h3, h4, ul, ol, li, figure, figcaption, div, section, article {
-    margin:0;
-    padding:0;
-}
-
 ul li{
     list-style-type: none;
 }
@@ -40,11 +33,11 @@ a:visited {
     color: inherit;
 }
 
-a:link {
-    color: inherit;
-}
-
 button {
-    all:unset;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
     cursor: pointer;
+    border: none;
 }

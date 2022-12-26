@@ -7,6 +7,7 @@
     <title>Home</title>
     <link href="styles/all.css" rel="stylesheet">
     <link href="styles/home.css" rel="stylesheet">
+    <script src="scrips/nav-drop-down.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,17 +23,17 @@
             -->
             <nav>
                 <ul>
-                    <li class="sub-nav-container"><button>Home</button></li>
-                    <li class="sub-nav-container">
-                        <button>Machine Learning</button>
+                    <li class="sub-nav-container"><button class="link" data-dropdown-button>Home</button></li>
+                    <li class="sub-nav-container" data-dropdown>
+                        <button class="link" data-dropdown-button onclick="window.location.href='ml.html'">Machine Learning</button>
                         <ul class="sub-nav">
                             <li><a href="#">Project 1 has a very big title</a></li>
                             <li><a href="#">Project 2</a></li>
                             <li><a href="#">all..</a></li>
                         </ul>
                     </li>
-                    <li class="sub-nav-container">
-                        <button>Android</button>
+                    <li class="sub-nav-container" data-dropdown>
+                        <button class="link" data-dropdown-button>Android</button>
                         <ul class="sub-nav">
                             <li><a href="#">Project 1</a></li>
                             <li><a href="#">Project 2</a></li>
@@ -41,8 +42,8 @@
                             <li><a href="#">all..</a></li>
                         </ul>
                     </li>
-                    <li class="sub-nav-container">
-                        <button>Web</button>
+                    <li class="sub-nav-container" data-dropdown>
+                        <button class="link" data-dropdown-button>Web</button>
                         <ul class="sub-nav">
                             <li><a href="#">Project 1</a></li>
                             <li><a href="#">Project 2</a></li>
@@ -51,8 +52,8 @@
                             <li><a href="#">all..</a></li>
                         </ul>
                     </li>
-                    <li class="sub-nav-container">
-                        <button>IoT</button>
+                    <li class="sub-nav-container" data-dropdown>
+                        <button class="link" data-dropdown-button>IoT</button>
                         <ul class="sub-nav">
                             <li><a href="#">Project 1</a></li>
                             <li><a href="#">Project 1</a></li>
@@ -175,7 +176,7 @@
                 </div>
             </a>
         </section>
-        <p class="copyright"> Copyright 2022</p>
+        <p class="copyright"> Last updated Dec 2022</p>
     </footer>
 </body>
 </html>
