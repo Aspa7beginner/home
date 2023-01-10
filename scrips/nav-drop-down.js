@@ -21,7 +21,7 @@ document.addEventListener("mouseover", ev => {
 
 document.addEventListener("click", ev => {
 
-    const isMoreInfoButton = ev.target.matches("[category-description-data-button]");
+    const isMoreInfoButton = ev.target.matches("[data-category-description-button]");
     if (!isMoreInfoButton) return;
 
     let currentCategoryDescription;
@@ -29,28 +29,32 @@ document.addEventListener("click", ev => {
         currentCategoryDescription = ev.target.closest("[category-data]").querySelector(".app-category-description");
         currentCategoryDescription.classList.toggle('open');
         
+        var parentA = currentCategoryDescription.parentNode;
+        
+        let toReverse = ev.target;
+        ev.target.textContent = 'more...';
+        if (ev.target === currentCategoryDescription.previousElementSibling) {
+            toReverse = currentCategoryDescription;
+            ev.target.textContent = 'less...';
+        }
+        parentA.insertBefore(toReverse, toReverse.previousElementSibling);
+        //parentA.insertBefore(ev.target, siblingA);
+    }
+    
+
+    /*
         // supose nodeA = ev.target, nodeB = currentCategoryDescription
         let parrentA = ev.target.parentNode;
         //let siblingA = ev.target.nextSibling === currentCategoryDescription ? ev.target : ev.target.nextSibling;
         let siblingA;
         if(ev.target.nextSibling !== currentCategoryDescription) {
             siblingA = ev.target.nextSibling;
-        } 
+        }
         // move nodeA to before nodeB
         currentCategoryDescription.parentNode.insertBefore(ev.target, currentCategoryDescription);
         // move nodeB to before the sibling of nodeA 
         parrentA.insertBefore(currentCategoryDescription, siblingA);
         ev.target.textContent = currentCategoryDescription.classList.contains("open") ? "less..." : "more...";
-    
-    }
 
-        
-    document.querySelectorAll('.app-category-description open').forEach(dropdown=>{
-        if (dropdown === currentCategoryDescription) return;
-        console.log(dropdown);
-        dropdown.classList.remove('open');
-    });
-
-
-
+    */
 })
